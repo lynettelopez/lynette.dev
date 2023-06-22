@@ -3,12 +3,13 @@
 .env
 .env.*
 .svelte-kit
+.vercel
 build
 node_modules
 package
 vite.config.js*
 
-# package managers
+# dependencies
 package-lock.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
