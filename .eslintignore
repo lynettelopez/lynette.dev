@@ -1,0 +1,15 @@
+!.env.example
+.DS_Store
+.env
+.env.*
+.svelte-kit
+build
+node_modules
+package
+vite.config.js*
+
+# package managers
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+yarn.lock

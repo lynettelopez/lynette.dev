@@ -1,0 +1,31 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+.pnp
+.pnp.js
+node_modules
+
+# dotenv files
+!.env.example
+.env
+.env.*
+
+# misc
+.DS_Store
+.vscode
+*.pem
+
+# svelte
+.svelte-kit
+
+# testing
+coverage
+
+# vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
