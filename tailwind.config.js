@@ -17,5 +17,12 @@ export default {
       },
       black: '#323232'
     },
+    extend: {
+      fontFamily: {
+        'opti-champion': ['Opti Champion', 'sans-serif'],
+        'nunito-sans': ['Nunito Sans', 'sans-serif'],
+        knewave: ['Knewave']
+      }
+    }
   }
 };

@@ -3,14 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply text-4xl font-bold;
+  @font-face {
+    src: url('/fonts/OptiChampion/OptiChampion-Bold.otf') format('opentype');
+    font-family: 'Opti Champion';
+    font-weight: 400;
+    font-display: swap;
   }
-  h2 {
-    @apply text-3xl font-bold;
+
+  @font-face {
+    src: url('/fonts/NunitoSans/NunitoSans-VariableFont.ttf') format('truetype') tech(variations);
+    font-family: 'Nunito Sans';
+    font-display: swap;
   }
-  h3 {
-    @apply text-2xl font-bold;
+
+  @font-face {
+    src: url('/fonts/Knewave/Knewave-Regular.ttf') format('truetype');
+    font-family: 'Knewave';
+    font-weight: 400;
+    font-display: block;
   }
-  /* ... */
 }
