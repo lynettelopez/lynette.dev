@@ -5,11 +5,10 @@
 .svelte-kit
 .vercel
 build
-node_modules
 package
-vite.config.js*
 
 # dependencies
+node_modules
 package-lock.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
