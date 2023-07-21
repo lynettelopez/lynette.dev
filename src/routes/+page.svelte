@@ -1,4 +1,4 @@
-<div class="w-full h-full flex flex-row justify-end items-center">
+<div class="w-full h-full flex justify-end items-center">
   <div class="w-4/5 space-y-32">
     <h1 class="font-opti-champion text-black space-y-4">
       <span class="block text-5xl animate-fade-right">Hey, web cowboy,</span>
