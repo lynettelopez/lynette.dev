@@ -1,22 +1,20 @@
-<script context="module" lang="ts">
+<script lang="ts">
   type SidenavItem = {
     isDisabled?: boolean;
     label: string;
     url?: string;
   };
-</script>
 
-<script lang="ts">
   const sidenavItems: SidenavItem[] = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lynette-lopez/' },
-    { label: 'GitHub', url: 'https://www.github.com/lynettelopez' },
-    { label: 'Blog', isDisabled: true }
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/lynette-lopez/" },
+    { label: "GitHub", url: "https://www.github.com/lynettelopez" },
+    { isDisabled: true, label: "Blog" },
   ];
 
-  const labelStyle = 'font-nunito-sans text-xl uppercase tracking-[2px]';
+  const labelStyle = "font-nunito-sans text-xl uppercase tracking-[2px]";
 </script>
 
-<div class="w-full h-full flex flex-col justify-evenly items-center animate-entry-right">
+<nav class="w-full h-full flex flex-col justify-evenly items-center animate-entry-right">
   {#each sidenavItems as { isDisabled, label, url }}
     <div class="w-full text-center origin-center -rotate-90 translate-x-1/4">
       {#if isDisabled}
@@ -34,4 +32,4 @@
       {/if}
     </div>
   {/each}
-</div>
+</nav>

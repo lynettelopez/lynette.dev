@@ -26,9 +26,5 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "root": true,
-  "rules": {
-    "no-duplicate-imports": ["error", { "includeExports": true }],
-    "sort-imports": "error"
-  }
+  "root": true
 }

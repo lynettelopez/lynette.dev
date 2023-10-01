@@ -1,4 +1,4 @@
-<div class="w-full h-full flex justify-end items-center">
+<main class="w-full h-full flex justify-end items-center">
   <div class="w-4/5 space-y-32">
     <h1 class="space-y-4">
       <span
@@ -19,4 +19,4 @@
       writing, learning new languages (both human and computer-based), and all things modern minimalism.
     </p>
   </div>
-</div>
+</main>

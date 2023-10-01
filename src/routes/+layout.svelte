@@ -1,6 +1,6 @@
 <script lang="ts">
-  import '../app.css';
-  import Sidenav from '$lib/components/Sidenav.svelte';
+  import "../app.css";
+  import Sidenav from "$lib/components/Sidenav.svelte";
 </script>
 
 <div class="relative w-screen h-screen flex bg-gray-light">

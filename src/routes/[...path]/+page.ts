@@ -1,6 +1,8 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect } from "@sveltejs/kit";
+import type { PageLoad } from "./$types";
 
-/** @type {import('./$types').PageLoad} */
-export function load() {
-  throw redirect(304, '/');
+export const prerender = false;
+
+export function load(): PageLoad {
+  throw redirect(304, "/");
 }
