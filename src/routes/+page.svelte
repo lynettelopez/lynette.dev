@@ -3,12 +3,14 @@
     <h1 class="space-y-4">
       <span
         class="block font-opti-champion text-black text-xl md:text-3xl xl:text-5xl animate-fade-right"
-        >Hey, web cowboy,</span
       >
+        Hey, web cowboy,
+      </span>
       <span
         class="inline-block font-opti-champion text-black text-5xl md:text-7xl xl:text-9xl animate-fade-right"
-        >I'm Lynette
-        <span class="font-knewave text-indigo animate-fade-in animate-delay-500">*</span>
+      >
+        I'm Lynette
+        <span class="font-knewave text-indigo animate-fade-in animate-delay-500"> * </span>
       </span>
     </h1>
     <p
@@ -20,3 +22,4 @@
     </p>
   </div>
 </main>
+;

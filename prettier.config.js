@@ -1,4 +1,4 @@
-/** @type {import("prettier").Options} */
+/** @type {import('prettier').Config} */
 export default {
   overrides: [
     {
@@ -9,6 +9,5 @@ export default {
     },
   ],
   plugins: ["prettier-plugin-svelte"],
-  pluginSearchDirs: ["."],
   printWidth: 100,
 };
