@@ -1,15 +1,4 @@
-!.env.example
-.DS_Store
-.env
-.env.*
-.svelte-kit
-.vercel
-build
-package
+# https://prettier.io/docs/en/ignore.html
 
 # dependencies
-node_modules
-package-lock.json
 pnpm-lock.yaml
-pnpm-workspace.yaml
-yarn.lock

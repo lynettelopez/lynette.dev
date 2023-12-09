@@ -1,25 +1,20 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# https://help.github.com/articles/ignoring-files
 
 # dependencies
-.pnp
-.pnp.js
 node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
 
-# deploy
-.vercel
-
-# dotenv files
+# dotenv
 !.env.example
 .env
 .env.*
 
+# ide
+.vscode
+
 # misc
 .DS_Store
-.vscode
-*.pem
 
 # svelte
 .svelte-kit
@@ -27,6 +22,13 @@ yarn-error.log*
 # testing
 coverage
 
+# typescript
+*.tsbuildinfo
+
+# vercel
+.vercel
+
 # vite
+build
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
