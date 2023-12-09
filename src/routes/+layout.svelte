@@ -1,6 +1,6 @@
 <script lang="ts">
   import "../app.css";
-  import Sidenav from "$lib/components/Sidenav.svelte";
+  import Navbar from "$lib/components/Navbar.svelte";
 </script>
 
 <div class="relative w-screen h-screen flex bg-gray-light">
@@ -22,6 +22,6 @@
     <slot />
   </div>
   <div class="z-10 basis-1/6">
-    <Sidenav />
+    <Navbar />
   </div>
 </div>

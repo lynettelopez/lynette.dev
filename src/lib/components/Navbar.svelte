@@ -1,11 +1,11 @@
 <script lang="ts">
-  type SidenavItem = {
+  type NavbarItem = {
     isDisabled?: boolean;
     label: string;
     url?: string;
   };
 
-  const sidenavItems: SidenavItem[] = [
+  const navbarItems: NavbarItem[] = [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/lynette-lopez/" },
     { label: "GitHub", url: "https://www.github.com/lynettelopez" },
     { isDisabled: true, label: "Blog" },
@@ -15,7 +15,7 @@
 </script>
 
 <nav class="w-full h-full flex flex-col justify-evenly items-center animate-entry-right">
-  {#each sidenavItems as { isDisabled, label, url }}
+  {#each navbarItems as { isDisabled, label, url }}
     <div class="w-full text-center origin-center -rotate-90 translate-x-1/4">
       {#if isDisabled}
         <div class="relative inline-block cursor-default">
