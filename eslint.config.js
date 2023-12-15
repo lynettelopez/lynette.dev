@@ -1,6 +1,6 @@
-import js from "@eslint/js";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import eslint from "@eslint/js";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import typescriptParser from "@typescript-eslint/parser";
 import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
 import sveltePlugin from "eslint-plugin-svelte";
@@ -12,7 +12,7 @@ export default [
     ignores: ["**/*.d.ts", ".svelte-kit", ".vercel"],
   },
   {
-    ...js.configs.recommended,
+    ...eslint.configs.recommended,
   },
   {
     ...prettierConfig,
@@ -20,17 +20,17 @@ export default [
   {
     files: ["**/*.ts"],
     languageOptions: {
-      parser: tsParser,
+      parser: typescriptParser,
       parserOptions: {
         // Required setting in `@typescript-eslint/parser` v4.24.0
         extraFileExtensions: [".svelte"],
       },
     },
     plugins: {
-      "@typescript-eslint": tsPlugin,
+      "@typescript-eslint": typescriptPlugin,
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules,
+      ...typescriptPlugin.configs.recommended.rules,
     },
   },
   {
@@ -39,7 +39,7 @@ export default [
       parser: svelteParser,
       parserOptions: {
         // Parses the `<script>` in `.svelte` files as TypeScript
-        parser: tsParser,
+        parser: typescriptParser,
       },
     },
     plugins: {
