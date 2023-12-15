@@ -22,8 +22,8 @@ export default {
       black: "#323232",
       current: "currentColor",
       gray: {
-        light: "#F6F6F6",
         dark: "#A9A9A9",
+        light: "#F6F6F6",
       },
       indigo: "#6320EE",
       transparent: "transparent",
@@ -39,9 +39,9 @@ export default {
         "grow-right": "grow-right 1s ease-in-out forwards",
       },
       fontFamily: {
+        knewave: ["Knewave"],
         "nunito-sans": ["Nunito Sans", "sans-serif"],
         "opti-champion": ["Opti Champion", "sans-serif"],
-        knewave: ["Knewave"],
       },
       keyframes: {
         "entry-right": {

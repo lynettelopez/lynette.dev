@@ -1,42 +1,75 @@
-import eslint from "@eslint/js";
-import prettierConfig from "eslint-config-prettier";
-
+import js from "@eslint/js";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
-import sveltePlugin from "eslint-plugin-svelte";
-
 import tsParser from "@typescript-eslint/parser";
+import prettierConfig from "eslint-config-prettier";
+import importPlugin from "eslint-plugin-import";
+import sveltePlugin from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
 
-// Replaces `.eslintignore` in globally excluding files
-const ignoreConfig = {
-  ignores: [".svelte-kit", ".vercel"],
-};
-
-const tsConfig = {
-  files: ["src/**/*.ts"],
-  ignores: ["src/**/app.d.ts"],
-  languageOptions: {
-    parser: tsParser,
-    parserOptions: {
-      extraFileExtensions: [".svelte"], // Required setting in `@typescript-eslint/parser` v4.24.0
+export default [
+  {
+    // Replaces `.eslintignore` in globally excluding files
+    ignores: ["**/*.d.ts", ".svelte-kit", ".vercel"],
+  },
+  {
+    ...js.configs.recommended,
+  },
+  {
+    ...prettierConfig,
+  },
+  {
+    files: ["**/*.ts"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        // Required setting in `@typescript-eslint/parser` v4.24.0
+        extraFileExtensions: [".svelte"],
+      },
+    },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
     },
   },
-  plugins: {
-    "@typescript-eslint": tsPlugin,
-  },
-};
-
-const svelteConfig = {
-  files: ["src/**/*.svelte"],
-  languageOptions: {
-    parser: svelteParser,
-    parserOptions: {
-      parser: tsParser, // Parses the `<script>` in `.svelte` files as TypeScript
+  {
+    files: ["**/*.svelte"],
+    languageOptions: {
+      parser: svelteParser,
+      parserOptions: {
+        // Parses the `<script>` in `.svelte` files as TypeScript
+        parser: tsParser,
+      },
+    },
+    plugins: {
+      svelte: sveltePlugin,
+    },
+    rules: {
+      ...sveltePlugin.configs.recommended.rules,
     },
   },
-  plugins: {
-    sveltePlugin,
+  {
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
+    plugins: {
+      import: importPlugin,
+    },
+    rules: {
+      "capitalized-comments": ["error", "always"],
+      "import/order": [
+        "error",
+        {
+          alphabetize: { caseInsensitive: true, order: "asc" },
+          groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
+          "newlines-between": "always",
+          pathGroupsExcludedImportTypes: ["react"],
+        },
+      ],
+      "no-duplicate-imports": ["error", { includeExports: true }],
+      "no-inline-comments": ["error"],
+      "sort-keys": ["error", "asc", { natural: true }],
+    },
   },
-};
-
-export default [ignoreConfig, eslint.configs.recommended, tsConfig, svelteConfig, prettierConfig];
+];
