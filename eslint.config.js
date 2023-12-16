@@ -3,20 +3,27 @@ import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
+import prettierPlugin from "eslint-plugin-prettier";
 import sveltePlugin from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
 
-export default [
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const ESLINT = [
   {
-    // Replaces `.eslintignore` in globally excluding files
-    ignores: ["**/*.d.ts", ".svelte-kit", ".vercel"],
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
+    rules: {
+      ...eslint.configs.recommended.rules,
+      "capitalized-comments": ["error", "always"],
+      "no-inline-comments": ["error"],
+      "sort-keys": ["error", "asc", { natural: true }],
+    },
   },
-  {
-    ...eslint.configs.recommended,
-  },
-  {
-    ...prettierConfig,
-  },
+];
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const TYPESCRIPT = [
   {
     files: ["**/*.ts"],
     languageOptions: {
@@ -26,13 +33,21 @@ export default [
         extraFileExtensions: [".svelte"],
       },
     },
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
     },
     rules: {
-      ...typescriptPlugin.configs.recommended.rules,
+      ...typescriptPlugin.configs.strict.rules,
+      ...typescriptPlugin.configs.stylistic.rules,
     },
   },
+];
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const SVELTE = [
   {
     files: ["**/*.svelte"],
     languageOptions: {
@@ -42,6 +57,9 @@ export default [
         parser: typescriptParser,
       },
     },
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
     plugins: {
       svelte: sveltePlugin,
     },
@@ -49,15 +67,17 @@ export default [
       ...sveltePlugin.configs.recommended.rules,
     },
   },
+];
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const IMPORT = [
   {
-    linterOptions: {
-      reportUnusedDisableDirectives: true,
-    },
     plugins: {
       import: importPlugin,
     },
     rules: {
-      "capitalized-comments": ["error", "always"],
+      ...importPlugin.configs.recommended.rules,
+      ...importPlugin.configs.typescript.rules,
       "import/order": [
         "error",
         {
@@ -67,9 +87,44 @@ export default [
           pathGroupsExcludedImportTypes: ["react"],
         },
       ],
-      "no-duplicate-imports": ["error", { includeExports: true }],
-      "no-inline-comments": ["error"],
-      "sort-keys": ["error", "asc", { natural: true }],
+    },
+    settings: {
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"],
+      },
+      "import/resolver": {
+        typescript: {
+          project: "./tsconfig.json",
+        },
+      },
     },
   },
+];
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const PRETTIER = [
+  {
+    ...prettierConfig,
+  },
+  {
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      ...prettierPlugin.configs.recommended.rules,
+    },
+  },
+];
+
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export default [
+  {
+    // Replaces `.eslintignore` in globally excluding files
+    ignores: [".svelte-kit", ".vercel", "**/*.d.ts"],
+  },
+  ...ESLINT,
+  ...TYPESCRIPT,
+  ...SVELTE,
+  ...IMPORT,
+  ...PRETTIER,
 ];
