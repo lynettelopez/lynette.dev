@@ -1,9 +1,7 @@
 import eslint from "@eslint/js";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
-import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
-import prettierPlugin from "eslint-plugin-prettier";
 import sveltePlugin from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
 
@@ -102,21 +100,6 @@ const IMPORT = [
 ];
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-const PRETTIER = [
-  {
-    ...prettierConfig,
-  },
-  {
-    plugins: {
-      prettier: prettierPlugin,
-    },
-    rules: {
-      ...prettierPlugin.configs.recommended.rules,
-    },
-  },
-];
-
-/** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
     // Replaces `.eslintignore` in globally excluding files
@@ -126,5 +109,4 @@ export default [
   ...TYPESCRIPT,
   ...SVELTE,
   ...IMPORT,
-  ...PRETTIER,
 ];

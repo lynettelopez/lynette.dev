@@ -3,7 +3,7 @@ node_modules
 pnpm-debug.log*
 pnpm-error.log*
 
-# dotenv
+# environment variables
 !.env.example
 .env
 .env.*
@@ -11,22 +11,9 @@ pnpm-error.log*
 # ide
 .vscode
 
-# misc
+# misc.
 .DS_Store
 
-# svelte
+# sveltekit
 .svelte-kit
-
-# testing
-coverage
-
-# typescript
-*.tsbuildinfo
-
-# vercel
 .vercel
-
-# vite
-build
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
