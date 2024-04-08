@@ -14,15 +14,15 @@
   const labelStyle = "font-nunito-sans text-xl uppercase tracking-[2px]";
 </script>
 
-<nav class="w-full h-full flex flex-col justify-evenly items-center animate-entry-right">
+<nav class="flex h-full w-full animate-entry-right flex-col items-center justify-evenly">
   {#each navbarItems as { isDisabled, label, url }}
-    <div class="w-full text-center origin-center -rotate-90 translate-x-1/4">
+    <div class="w-full origin-center translate-x-1/4 -rotate-90 text-center">
       {#if isDisabled}
         <div class="relative inline-block cursor-default">
           <span class={labelStyle}>{label}</span>
-          <div class="absolute top-1/2 -left-1/3 w-24 h-1.5 rotate-12 bg-indigo" />
+          <div class="absolute -left-1/3 top-1/2 h-1.5 w-24 rotate-12 bg-indigo" />
           <div
-            class="absolute -top-24 -left-6 rotate-[100deg] font-knewave text-2xl text-indigo lowercase"
+            class="absolute -left-6 -top-24 rotate-[100deg] font-knewave text-2xl lowercase text-indigo"
           >
             coming soon!
           </div>
