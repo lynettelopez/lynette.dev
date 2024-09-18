@@ -4,20 +4,22 @@
 
 @layer base {
   @font-face {
-    src: url("/fonts/OptiChampion/OptiChampion-Bold.otf") format("opentype");
+    src: url("/assets/fonts/OptiChampion/OptiChampion-Bold.otf")
+      format("opentype");
     font-family: "Opti Champion";
     font-weight: 400;
     font-display: swap;
   }
 
   @font-face {
-    src: url("/fonts/NunitoSans/NunitoSans-VariableFont.ttf") format("truetype") tech(variations);
+    src: url("/assets/fonts/NunitoSans/NunitoSans-VariableFont.ttf")
+      format("truetype") tech(variations);
     font-family: "Nunito Sans";
     font-display: swap;
   }
 
   @font-face {
-    src: url("/fonts/Knewave/Knewave-Regular.ttf") format("truetype");
+    src: url("/assets/fonts/Knewave/Knewave-Regular.ttf") format("truetype");
     font-family: "Knewave";
     font-weight: 400;
     font-display: block;

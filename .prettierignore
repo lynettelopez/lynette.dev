@@ -1,2 +1,5 @@
+# build
+dist
+
 # dependencies
 pnpm-lock.yaml

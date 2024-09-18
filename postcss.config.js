@@ -1,7 +1,7 @@
+/** @type {import('postcss').Processor} */
 export default {
   plugins: {
     tailwindcss: {},
-    // eslint-disable-next-line sort-keys
     autoprefixer: {},
   },
 };

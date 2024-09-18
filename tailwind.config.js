@@ -2,7 +2,7 @@ import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: ["./index.html"],
   plugins: [
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
